@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Home from './Home';
 
 function App() {
   return (
@@ -8,11 +10,10 @@ function App() {
         Header
       </header>
       <main>
-        Hello World
+        <Switch>
+          <Route component={Home} />
+        </Switch>
       </main>
-      <footer>
-        Footer
-      </footer>
     </div>
   );
 }
