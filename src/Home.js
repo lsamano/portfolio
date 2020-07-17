@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -14,9 +15,15 @@ const Home = () => {
     <Typography variant="h4" gutterBottom>
       Software Engineer
     </Typography>
-    <Icon className="fab fa-linkedin" fontSize="large"/>
-    <Icon className="fab fa-github" fontSize="large"/>
-    <Icon className="fab fa-medium" fontSize="large"/>
+    <Tooltip title="LinkedIn" arrow>
+      <IconButton className="fab fa-linkedin" fontSize="large"/>
+    </Tooltip>
+    <Tooltip title="GitHub" arrow>
+    <IconButton className="fab fa-github" fontSize="large"/>
+    </Tooltip>
+    <Tooltip title="Medium" arrow>
+    <IconButton className="fab fa-medium" fontSize="large"/>
+    </Tooltip>
     </div>
   )
 }
