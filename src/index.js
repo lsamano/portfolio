@@ -7,7 +7,6 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { HashRouter as Router } from 'react-router-dom';
 import pink from '@material-ui/core/colors/pink';
-import purple from '@material-ui/core/colors/purple';
 
 const theme = createMuiTheme({
   palette: {
