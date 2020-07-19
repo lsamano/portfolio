@@ -17,7 +17,12 @@ const Home = () => {
       <Typography variant="h4" color="primary" gutterBottom>
         Full Stack Software Engineer
       </Typography>
-      <ButtonGroup orientation="vertical" size="large" color="secondary" aria-label="large outlined button group">
+      <ButtonGroup
+        orientation="vertical"
+        size="large"
+        color="secondary"
+        aria-label="vertical contained primary button group"
+        variant="text">
         <Button startIcon={<Icon className="fas fa-user-circle"/>}>About Me</Button>
         <Button startIcon={<Icon className="fas fa-terminal"/>}>Projects</Button>
         <Button startIcon={<Icon className="fas fa-file-alt"/>}>Resume</Button>
