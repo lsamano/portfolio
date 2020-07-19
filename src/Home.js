@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 
 const Home = () => {
   return (
-    <Container component={Paper} className="main-div">
+    <>
       <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
       <Typography variant="h2" component="h2" gutterBottom>
         Leizl Samano
@@ -28,7 +28,7 @@ const Home = () => {
         <Button startIcon={<Icon className="fas fa-file-alt"/>}>Resume</Button>
         <Button startIcon={<Icon className="fas fa-pen-fancy"/>}>Blog</Button>
       </ButtonGroup>
-    </Container>
+    </>
   )
 }
 

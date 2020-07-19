@@ -12,9 +12,9 @@ code {
     monospace;
 }
 
-main {
+/* main {
    min-height: calc(100vh - 112px);
-}
+} */
 
 .main-div {
   padding: 4%;
