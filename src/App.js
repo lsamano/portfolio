@@ -15,7 +15,7 @@ function App() {
         <Header />
       </header>
       <main>
-        <Container component={Paper} className="main-div">
+        <Container className="main-div">
           <Switch>
             <Route path="/about" component={About} />
             <Route path="/" exact component={Home} />
