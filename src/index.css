@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+main {
+   min-height: calc(100vh - 112px);
+}
+
 .main-div {
-  padding: 8%;
+  padding: 5%;
+  min-height: calc(100vh - 112px);
+  /* height: 100%; */
 }

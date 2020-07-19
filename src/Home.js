@@ -11,13 +11,13 @@ const Home = () => {
   return (
     <Container component={Paper} className="main-div">
       <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
-      <Typography variant="h1" component="h2" gutterBottom>
+      <Typography variant="h2" component="h2" gutterBottom>
         Leizl Samano
       </Typography>
       <Typography variant="h4" color="primary" gutterBottom>
         Full Stack Software Engineer
       </Typography>
-      <ButtonGroup size="large" color="secondary" aria-label="large outlined button group">
+      <ButtonGroup orientation="vertical" size="large" color="secondary" aria-label="large outlined button group">
         <Button startIcon={<Icon className="fas fa-user-circle"/>}>About Me</Button>
         <Button startIcon={<Icon className="fas fa-terminal"/>}>Projects</Button>
         <Button startIcon={<Icon className="fas fa-file-alt"/>}>Resume</Button>
