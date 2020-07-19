@@ -3,10 +3,14 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Footer from './Footer';
+import Header from './Header';
 
 function App() {
   return (
     <div className="App">
+      <header>
+        <Header />
+      </header>
       <main>
         <Switch>
           <Route component={Home} />
