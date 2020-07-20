@@ -4,6 +4,7 @@ import Typography from '@material-ui/core/Typography';
 const About = ({}) => {
   return (
     <>
+    <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
     <Typography variant="h2" component="h2">
     About Me
     </Typography>
@@ -17,7 +18,7 @@ const About = ({}) => {
     <Typography variant="body1">
     HTML5, CSS3, JavaScript, React.js, Redux, Ruby, Ruby on Rails, PostgreSQL, MongoDB
     </Typography>
-    
+
     <Typography variant="h2" component="h2">
     My Experience
     </Typography>
