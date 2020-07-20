@@ -7,6 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import About from './About';
+import Projects from './Projects';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
       <main>
         <Container className="main-div">
           <Switch>
-            <Route path="/about" component={About} />
             <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
           </Switch>
         </Container>
       </main>
