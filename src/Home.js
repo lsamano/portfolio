@@ -5,6 +5,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
+import { Link } from 'react-router-dom';
 // import { DiHtml5, DiCss3, DiRor, DiRuby, DiJavascript1, DiReact, DiNodejs, DiPostgresql, DiMongodb } from 'react-icons/di';
 
 const Home = () => {
@@ -22,10 +23,10 @@ const Home = () => {
         color="secondary"
         aria-label="vertical contained primary button group"
         variant="text">
-        <Button startIcon={<Icon className="fas fa-user-circle"/>}>About Me</Button>
-        <Button startIcon={<Icon className="fas fa-terminal"/>}>Projects</Button>
-        <Button startIcon={<Icon className="fas fa-file-alt"/>}>Resume</Button>
-        <Button startIcon={<Icon className="fas fa-pen-fancy"/>}>Blog</Button>
+        <Button startIcon={<Icon className="fas fa-user-circle"/>} component={Link} to="/about">About Me</Button>
+        <Button startIcon={<Icon className="fas fa-terminal"/>} component={Link} to="/projects">Projects</Button>
+        <Button startIcon={<Icon className="fas fa-file-alt"/>} component={Link} to="/resume">Resume</Button>
+        <Button startIcon={<Icon className="fas fa-pen-fancy"/>} component={Link} to="/blog">Blog</Button>
       </ButtonGroup>
     </>
   )
