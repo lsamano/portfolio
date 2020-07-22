@@ -8,6 +8,8 @@ import Footer from './Footer';
 import pages from './pages';
 
 function App() {
+  const { Home, About, Projects } = pages;
+
   return (
     <div className="App">
       <header>
@@ -16,9 +18,9 @@ function App() {
       <main>
         <Container className="main-div">
           <Switch>
-            <Route path="/" exact component={pages.Home} />
-            <Route path="/about" component={pages.About} />
-            <Route path="/projects" component={pages.Projects} />
+            <Route path="/" exact component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
           </Switch>
         </Container>
       </main>
