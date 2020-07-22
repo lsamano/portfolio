@@ -5,9 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Container from '@material-ui/core/Container';
 import Header from './Header';
 import Footer from './Footer';
-import Home from './Home';
-import About from './About';
-import Projects from './Projects';
+import pages from './pages';
 
 function App() {
   return (
@@ -18,9 +16,9 @@ function App() {
       <main>
         <Container className="main-div">
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
+            <Route path="/" exact component={pages.Home} />
+            <Route path="/about" component={pages.About} />
+            <Route path="/projects" component={pages.Projects} />
           </Switch>
         </Container>
       </main>
