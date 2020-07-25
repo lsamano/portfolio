@@ -14,7 +14,7 @@ const Home = () => {
       <Typography variant="h2" component="h2" gutterBottom>
         Leizl Samano
       </Typography>
-      <Typography variant="h4" color="primary" gutterBottom>
+      <Typography variant="h4" color="secondary" gutterBottom>
         Full Stack Software Engineer
       </Typography>
       <ButtonGroup

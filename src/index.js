@@ -12,10 +12,8 @@ import green from '@material-ui/core/colors/green';
 const theme = createMuiTheme({
   palette: {
     type: "dark",
-    primary: pink,
-    secondary: {
-      main: green['A100'],
-    },
+    primary: {main:"#212121"},
+    secondary: pink,
   }
 })
 
