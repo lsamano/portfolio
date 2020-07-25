@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
@@ -9,9 +9,8 @@ import { useTheme } from '@material-ui/core/styles';
 
 // import PropTypes from 'prop-types';
 
-const Project = ({}) => {
+const ProjectCard = ({}) => {
   const theme = useTheme();
-  console.log(theme);
   const [ imageUrl, setImageUrl ] = useState("")
 
   useEffect(() => {
@@ -21,39 +20,41 @@ const Project = ({}) => {
   }, [])
 
   return (
-    <Card>
-  <CardContent>
+    <Card >
+    <CardActionArea>
+    <CardMedia
+    component="img"
+    src={imageUrl}
+    alt="project image"
+    style={{width:"40vw"}}
+    />
+  <CardContent >
     <Typography variant="h5" component="h2">
       Tetris v2
     </Typography>
     <Typography color="textSecondary" gutterBottom>
       Challenge your friends in Tetris
     </Typography>
-    <Typography color="textPrimary">
-      <span style={{backgroundColor: theme.palette.primary.dark, padding:"5px", margin:"5px"}}>
+    <Typography color="textPrimary"><b>
+      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
         JavaScript
       </span>
-      <span style={{backgroundColor: theme.palette.primary.dark, padding:"5px", margin:"5px"}}>
+      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
         Express
       </span>
-      <span style={{backgroundColor: theme.palette.primary.dark, padding:"5px", margin:"5px"}}>
+      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
         WebSockets
-      </span>
+      </span></b>
     </Typography>
-    <CardMedia
-      component="img"
-      src={imageUrl}
-      alt="project image"
-      style={{width:"40vw", marginTop:"10px"}}
-      />
   </CardContent>
+  </CardActionArea>
 </Card>
 
   );
 }
 
-// Project.propTypes = {
+// ProjectCard.propTypes = {
 //   : PropTypes.
 // };
 
-export default Project;
+export default ProjectCard;

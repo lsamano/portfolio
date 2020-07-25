@@ -1,5 +1,5 @@
 import React from 'react';
-import Project from '../components/Project';
+import ProjectCard from '../components/ProjectCard';
 import Typography from '@material-ui/core/Typography';
 
 const Projects = ({}) => {
@@ -14,7 +14,7 @@ const Projects = ({}) => {
       Personal Projects
     </Typography>
     <div style={{display: "flex"}}>
-      <Project />
+      <ProjectCard />
     </div>
 
     <Typography variant="h6" component="h6" gutterBottom>
