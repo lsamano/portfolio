@@ -6,14 +6,20 @@ import * as serviceWorker from './serviceWorker';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { HashRouter as Router } from 'react-router-dom';
-import pink from '@material-ui/core/colors/pink';
-import green from '@material-ui/core/colors/green';
 
 const theme = createMuiTheme({
   palette: {
-    type: "dark",
-    primary: {main:"#212121"},
-    secondary: pink,
+    primary: {
+      main: '#ffccbc',
+      light: '#ffffee',
+      dark: '#cb9b8c'
+    },
+    secondary: {
+      main: '#bcaaa4',
+      light: '#efdcd5',
+      dark: '#8c7b75'
+      // main: '#bcefff'
+    },
   }
 })
 

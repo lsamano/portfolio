@@ -36,13 +36,13 @@ const ProjectCard = ({}) => {
       Challenge your friends in Tetris
     </Typography>
     <Typography color="textPrimary"><b>
-      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
+      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
         JavaScript
       </span>
-      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
+      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
         Express
       </span>
-      <span style={{backgroundColor: theme.palette.secondary.dark, padding:"5px", margin:"5px"}}>
+      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
         WebSockets
       </span></b>
     </Typography>

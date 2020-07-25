@@ -14,14 +14,14 @@ const Home = () => {
       <Typography variant="h2" component="h2" gutterBottom>
         Leizl Samano
       </Typography>
-      <Typography variant="h4" color="secondary" gutterBottom>
+      <Typography variant="h4" gutterBottom>
         Full Stack Software Engineer
       </Typography>
       <ButtonGroup
         orientation="vertical"
         size="large"
         color="secondary"
-        aria-label="vertical contained primary button group"
+        aria-label="vertical contained secondary button group"
         variant="text">
         <Button startIcon={<Icon className="fas fa-user-circle"/>} component={Link} to="/about">About Me</Button>
         <Button startIcon={<Icon className="fas fa-terminal"/>} component={Link} to="/projects">Projects</Button>
