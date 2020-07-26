@@ -5,7 +5,7 @@ import { projects } from '../info';
 
 const Projects = ({ }) => {
   const renderCards = () => {
-    return projects.map(proj => <ProjectCard {...proj} />)
+    return projects.map((proj, index) => <ProjectCard {...proj} key={index} />)
   }
 
   return (

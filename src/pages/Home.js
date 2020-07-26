@@ -3,8 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import Icon from '@material-ui/core/Icon';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
 // import { DiHtml5, DiCss3, DiRor, DiRuby, DiJavascript1, DiReact, DiNodejs, DiPostgresql, DiMongodb } from 'react-icons/di';
 
