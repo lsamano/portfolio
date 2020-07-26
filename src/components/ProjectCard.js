@@ -15,20 +15,25 @@ const ProjectCard = ({title, subtitle, img_url, tags}) => {
     tags.map((tag, index) => (
       <span
         key={index}
-        style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
+        style={{
+          backgroundColor: theme.palette.secondary.light,
+          padding: "5px",
+          margin: "5px",
+          // flex: "0 1 24%"
+        }}>
         {tag}
       </span>
     ))
   )
 
   return (
-    <Card >
+    <Card style={{width: "45%"}}>
     <CardActionArea>
     <CardMedia
     component="img"
     src={img_url}
     alt="project image"
-    style={{width:"40vw"}}
+    style={{width:"100%"}}
     />
   <CardContent >
     <Typography variant="h5" component="h2">
@@ -38,9 +43,9 @@ const ProjectCard = ({title, subtitle, img_url, tags}) => {
       {subtitle}
     </Typography>
     <Typography color="textPrimary">
-      <b>
-        {renderTags()}
-      </b>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+          {renderTags()}
+        </div>
     </Typography>
   </CardContent>
   </CardActionArea>

@@ -17,7 +17,7 @@ const Projects = ({ }) => {
     <Typography variant="h6" component="h6" gutterBottom>
       Personal Projects
     </Typography>
-    <div style={{display: "flex"}}>
+    <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around"}}>
       {renderCards()}
     </div>
 
