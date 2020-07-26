@@ -9,7 +9,7 @@ import { useTheme } from '@material-ui/core/styles';
 
 // import PropTypes from 'prop-types';
 
-const ProjectCard = ({}) => {
+const ProjectCard = ({title, subtitle, img_url, tags}) => {
   const theme = useTheme();
   const [ imageUrl, setImageUrl ] = useState("")
 
@@ -19,32 +19,34 @@ const ProjectCard = ({}) => {
     .then(data => setImageUrl(data[1].download_url))
   }, [])
 
+  const renderTags = () => (
+    tags.map(tag => (
+      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
+        {tag}
+      </span>
+    ))
+  )
+
   return (
     <Card >
     <CardActionArea>
     <CardMedia
     component="img"
-    src={imageUrl}
+    src={img_url}
     alt="project image"
     style={{width:"40vw"}}
     />
   <CardContent >
     <Typography variant="h5" component="h2">
-      Tetris v2
+      {title}
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-      Challenge your friends in Tetris
+      {subtitle}
     </Typography>
-    <Typography color="textPrimary"><b>
-      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
-        JavaScript
-      </span>
-      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
-        Express
-      </span>
-      <span style={{backgroundColor: theme.palette.secondary.light, padding:"5px", margin:"5px"}}>
-        WebSockets
-      </span></b>
+    <Typography color="textPrimary">
+      <b>
+        {renderTags()}
+      </b>
     </Typography>
   </CardContent>
   </CardActionArea>

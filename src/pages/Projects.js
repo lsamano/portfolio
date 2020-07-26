@@ -1,8 +1,12 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Typography from '@material-ui/core/Typography';
+import { projects } from '../info';
 
-const Projects = ({}) => {
+const Projects = ({ }) => {
+  const renderCards = () => {
+    return projects.map(proj => <ProjectCard {...proj} />)
+  }
 
   return (
     <>
@@ -14,7 +18,7 @@ const Projects = ({}) => {
       Personal Projects
     </Typography>
     <div style={{display: "flex"}}>
-      <ProjectCard />
+      {renderCards()}
     </div>
 
     <Typography variant="h6" component="h6" gutterBottom>
