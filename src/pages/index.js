@@ -1,9 +1,11 @@
 import About from './About';
 import Home from './Home';
 import Projects from './Projects';
+import Blog from './Blog';
 
 export default {
   About,
   Home,
-  Projects
+  Projects,
+  Blog
 }
