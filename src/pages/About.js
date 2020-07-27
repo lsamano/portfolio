@@ -1,10 +1,11 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
+
 const About = ({}) => {
   return (
     <>
-    <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
+    <img src={require("../images/avatar.jpg")} alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
     <Typography variant="h2" component="h2">
     About Me
     </Typography>
