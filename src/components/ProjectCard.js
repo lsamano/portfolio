@@ -27,7 +27,7 @@ const ProjectCard = ({title, subtitle, img_url, tags}) => {
   )
 
   return (
-    <Card style={{width: "45%"}}>
+    <Card style={{width: "45%", margin: "20px"}}>
     <CardActionArea>
     <CardMedia
     component="img"
