@@ -13,10 +13,7 @@ const Projects = ({ }) => {
     <Typography variant="h2" component="h2" gutterBottom>
       Projects
     </Typography>
-
-    <Typography variant="h6" component="h6" gutterBottom>
-      Personal Projects
-    </Typography>
+    
     <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around"}}>
       {renderCards()}
     </div>
