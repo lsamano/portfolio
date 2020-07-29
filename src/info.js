@@ -12,7 +12,7 @@ export const projects = [
     subtitle: "Assemble an eSports team, win some tournaments",
     img_url: "https://raw.githubusercontent.com/lsamano/tourn-client/master/images/preview.png",
     tags: [
-      "JavaScript", "React.js", "Redux", "Ruby on Rails", "PostgreSQL", "JSON Web Tokens"
+      "JavaScript", "React", "Redux", "Ruby on Rails", "PostgreSQL"
     ]
   },
   {
