@@ -5,10 +5,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useTheme } from '@material-ui/core/styles';
-
 // import PropTypes from 'prop-types';
 
-const ProjectCard = ({title, subtitle, img_url, tags}) => {
+const ProjectCard = ({ title, subtitle, img_url, tags }) => {
   const theme = useTheme();
 
   const renderTags = () => (
@@ -17,9 +16,9 @@ const ProjectCard = ({title, subtitle, img_url, tags}) => {
         key={index}
         style={{
           backgroundColor: theme.palette.secondary.light,
+          color: theme.palette.secondary.contrastText,
           padding: "5px",
-          margin: "5px",
-          // flex: "0 1 24%"
+          margin: "5px"
         }}>
         {tag}
       </span>
@@ -35,18 +34,16 @@ const ProjectCard = ({title, subtitle, img_url, tags}) => {
     alt="project image"
     style={{width:"100%"}}
     />
-  <CardContent >
+  <CardContent>
     <Typography variant="h5" component="h2">
       {title}
     </Typography>
     <Typography color="textSecondary" gutterBottom>
       {subtitle}
     </Typography>
-    <Typography color="textPrimary">
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
           {renderTags()}
         </div>
-    </Typography>
   </CardContent>
   </CardActionArea>
 </Card>

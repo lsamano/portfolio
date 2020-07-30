@@ -8,7 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink } from 'react-router-dom';
 
-const Header = ({}) => {
+const Header = () => {
   const [ anchorEl, setAnchorEl ] = useState(null);
 
   const handleClick = (event) => {
