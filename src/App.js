@@ -5,9 +5,10 @@ import Container from '@material-ui/core/Container';
 import Header from './Header';
 import Footer from './Footer';
 import pages from './pages';
+import { projects } from './info';
 
 function App() {
-  const { Home, About, Projects, Blog } = pages;
+  const { Home, About, Projects, Blog, OneProject } = pages;
 
   return (
     <div className="App">
@@ -19,7 +20,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
+            <Route path="/projects" exact render={routerProps => <Projects projects={projects} {...routerProps} />} />
+            <Route path="/projects/:id" render={routerProps => <OneProject project={projects[routerProps.match.params.id]} {...routerProps} />} />
             <Route path="/blog" component={Blog} />
           </Switch>
         </Container>

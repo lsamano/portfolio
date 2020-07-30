@@ -1,9 +1,8 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Typography from '@material-ui/core/Typography';
-import { projects } from '../info';
 
-const Projects = ({ }) => {
+const Projects = ({ projects }) => {
   const renderCards = () => {
     return projects.map((proj, index) => <ProjectCard {...proj} key={index} />)
   }
@@ -13,7 +12,7 @@ const Projects = ({ }) => {
     <Typography variant="h2" component="h2" gutterBottom>
       Projects
     </Typography>
-    
+
     <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-around"}}>
       {renderCards()}
     </div>
