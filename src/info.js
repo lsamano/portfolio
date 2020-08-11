@@ -1,3 +1,8 @@
+export const about = {
+  summary: "I'm Leizl, I'm a Software Engineer. In order to make a career switch from nursing, I completed Flatiron School's Software Engineering Immersive program.",
+  skills: "HTML5, CSS3, JavaScript, React.js, Redux, Ruby, Ruby on Rails, PostgreSQL, MongoDB"
+}
+
 export const projects = [
   {
     title: "Tetris v2",
