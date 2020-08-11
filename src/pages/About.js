@@ -1,9 +1,20 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import avatar from '../images/avatar.jpg';
-
+import { about } from '../info.js';
+import {
+  DiHtml5,
+  DiCss3,
+  DiRor,
+  DiRuby,
+  DiJavascript1,
+  DiReact,
+  DiNodejs,
+  DiPostgresql,
+  DiMongodb } from 'react-icons/di';
 
 const About = () => {
+  const { summary, skills } = about;
   return (
     <>
     <img src={avatar} alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
@@ -11,15 +22,29 @@ const About = () => {
     About Me
     </Typography>
     <Typography variant="body1">
-    I'm Leizl, I'm a Software Engineer.
+      { summary }
     </Typography>
 
     <Typography variant="h2" component="h2">
     My Current Skills
     </Typography>
     <Typography variant="body1">
-    HTML5, CSS3, JavaScript, React.js, Redux, Ruby, Ruby on Rails, PostgreSQL, MongoDB
+      { skills }
     </Typography>
+    <div className="dev-icons">
+      <DiHtml5 size={32}/>
+      <DiCss3 size={32}/>
+
+      <DiJavascript1 size={32}/>
+      <DiNodejs size={32}/>
+      <DiReact size={32}/>
+
+      <DiRuby size={32}/>
+      <DiRor size={32}/>
+
+      <DiPostgresql size={32}/>
+      <DiMongodb size={32}/>
+    </div>
 
     <Typography variant="h2" component="h2">
     My Experience
@@ -29,6 +54,10 @@ const About = () => {
     </Typography>
     <Typography variant="body1">
     Worked with students learning programming.
+    <br/>
+    Size: 200+ employees
+    <br/>
+    Industry: Education
     </Typography>
     </>
   );
