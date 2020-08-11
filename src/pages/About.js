@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import avatar from '../images/avatar.jpg';
 import { about } from '../info.js';
 import {
   DiHtml5,
@@ -17,7 +16,7 @@ const About = () => {
   const { summary, skills } = about;
   return (
     <>
-    <img src={avatar} alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
+    <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
     <Typography variant="h2" component="h2">
     About Me
     </Typography>
