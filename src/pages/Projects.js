@@ -4,7 +4,11 @@ import Typography from '@material-ui/core/Typography';
 
 const Projects = ({ projects }) => {
   const renderCards = () => {
-    return projects.map((proj, index) => <ProjectCard {...proj} key={index} />)
+    const projectCards = [];
+    for (const [name, proj] of Object.entries(projects)) {
+      projectCards.push(<ProjectCard {...proj} key={name} />)
+    }
+    return projectCards
   }
 
   return (

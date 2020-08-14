@@ -21,7 +21,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/projects" exact render={routerProps => <Projects projects={projects} {...routerProps} />} />
-            <Route path="/projects/:id" render={routerProps => <OneProject project={projects[routerProps.match.params.id]} {...routerProps} />} />
+            <Route path="/projects/:title" render={routerProps => <OneProject project={projects[routerProps.match.params.title]} {...routerProps} />} />
             <Route path="/blog" component={Blog} />
           </Switch>
         </Container>
