@@ -5,9 +5,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useTheme } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
-const ProjectCard = ({ title, subtitle, img_url, tags }) => {
+const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   const theme = useTheme();
 
   const renderTags = () => (
@@ -27,7 +28,7 @@ const ProjectCard = ({ title, subtitle, img_url, tags }) => {
 
   return (
     <Card style={{width: "45%", margin: "20px"}}>
-    <CardActionArea>
+    <CardActionArea component={Link} to={`/projects/${shorthand}`}>
     <CardMedia
     component="img"
     src={img_url}

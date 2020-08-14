@@ -6,7 +6,7 @@ const Projects = ({ projects }) => {
   const renderCards = () => {
     const projectCards = [];
     for (const [name, proj] of Object.entries(projects)) {
-      projectCards.push(<ProjectCard {...proj} key={name} />)
+      projectCards.push(<ProjectCard {...proj} shorthand={name} key={name} />)
     }
     return projectCards
   }
