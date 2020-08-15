@@ -6,7 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useTheme } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   const theme = useTheme();
@@ -52,8 +52,12 @@ const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   );
 }
 
-// ProjectCard.propTypes = {
-//   : PropTypes.
-// };
+ProjectCard.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  img_url: PropTypes.string,
+  tags: PropTypes.array,
+  shorthand: PropTypes.string,
+};
 
 export default ProjectCard;

@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard';
 import Typography from '@material-ui/core/Typography';
+import PropTypes from 'prop-types';
 
 const Projects = ({ projects }) => {
   const renderCards = () => {
@@ -30,5 +31,9 @@ const Projects = ({ projects }) => {
     </>
   );
 }
+
+Projects.propTypes = {
+  projects: PropTypes.object,
+};
 
 export default Projects;
