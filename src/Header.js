@@ -7,6 +7,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import { NavLink } from 'react-router-dom';
+import HideOnScroll from "./HideOnScroll"
 
 const Header = () => {
   const [ anchorEl, setAnchorEl ] = useState(null);
@@ -19,33 +20,35 @@ const Header = () => {
     setAnchorEl(null);
   };
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          onClick={handleClick}
-          >
-          <MenuIcon />
-        </IconButton>
-        <Menu
-          id="menu"
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          >
-          <MenuItem onClick={handleClose} component={NavLink} to="/">Home</MenuItem>
-          <MenuItem onClick={handleClose} component={NavLink} to="/about">About Me</MenuItem>
-          <MenuItem onClick={handleClose} component={NavLink} to="/projects">Projects</MenuItem>
-          <MenuItem onClick={handleClose} component={NavLink} to="/blog">Blog</MenuItem>
-        </Menu>
-        <Typography variant="h6">
-          Leizl Samano
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <HideOnScroll>
+      <AppBar>
+        <Toolbar>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={handleClick}
+            >
+            <MenuIcon />
+          </IconButton>
+          <Menu
+            id="menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            >
+            <MenuItem onClick={handleClose} component={NavLink} to="/">Home</MenuItem>
+            <MenuItem onClick={handleClose} component={NavLink} to="/about">About Me</MenuItem>
+            <MenuItem onClick={handleClose} component={NavLink} to="/projects">Projects</MenuItem>
+            <MenuItem onClick={handleClose} component={NavLink} to="/blog">Blog</MenuItem>
+          </Menu>
+          <Typography variant="h6">
+            Leizl Samano
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </HideOnScroll>
   );
 }
 
