@@ -10,19 +10,14 @@ import { HashRouter as Router } from 'react-router-dom';
 const theme = createMuiTheme({
   palette: {
     type: "dark",
+    // background: {
+    //   default: "#fff"
+    // },
     primary: {
       main: "#de119025"
-      // main: '#ffccbc20',
-      // light: '#ffffee',
-      // dark: '#cb9b8c',
-      // contrastText: '#fff'
     },
     secondary: {
-      main: '#000000',
-      // light: '#efdcd5',
-      // dark: '#8c7b75',
-      contrastText: '#fff'
-      // main: '#bcefff'
+      main: '#de1190',
     },
   }
 })
