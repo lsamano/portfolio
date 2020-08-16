@@ -2,6 +2,10 @@ import React from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
+import Toolbar from '@material-ui/core/Toolbar';
+import Fab from '@material-ui/core/Fab';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import ScrollTop from './ScrollTop';
 import Header from './Header';
 import Footer from './Footer';
 import pages from './pages';
@@ -14,6 +18,12 @@ function App() {
     <div className="App">
       <header>
         <Header />
+        <Toolbar id="back-to-top-anchor" />
+          <ScrollTop>
+            <Fab color="secondary" size="large" aria-label="scroll back to top">
+              <KeyboardArrowUpIcon />
+            </Fab>
+          </ScrollTop>
       </header>
       <main>
         <Container className="main-div">
