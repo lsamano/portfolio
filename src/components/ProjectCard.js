@@ -11,16 +11,18 @@ import PropTypes from 'prop-types';
 const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   const theme = useTheme();
 
+  const style = {
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
+    padding: "5px",
+    margin: "5px"
+  }
+
   const renderTags = () => (
     tags.map((tag, index) => (
       <span
         key={index}
-        style={{
-          backgroundColor: theme.palette.secondary.light,
-          color: theme.palette.secondary.contrastText,
-          padding: "5px",
-          margin: "5px"
-        }}>
+        style={style}>
         {tag}
       </span>
     ))
