@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import CodeIcon from '@material-ui/icons/Code';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import ListItem from '@material-ui/core/ListItem';
+import Icon from '@material-ui/core/Icon';
 import { useTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -14,29 +16,31 @@ import HideOnScroll from "./HideOnScroll"
 import ScrollTop from './ScrollTop';
 
 const Header = () => {
-  const [ anchorEl, setAnchorEl ] = useState(null);
+  // const [ anchorEl, setAnchorEl ] = useState(null);
+  const [value, setValue] = useState(0);
   const theme = useTheme();
 
   const style = {
     marginRight: theme.spacing(2)
   }
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  //
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
 
   const ScrollToSection = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector('#projects');
 
     if (anchor) {
-      console.log(anchor.scrollIntoView);
-      // anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
       anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-      // window.scrollTo(0, anchor.offsetTop)
     }
   };
 
@@ -45,29 +49,22 @@ const Header = () => {
       <HideOnScroll>
         <AppBar>
           <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={handleClick}
-              style={style} >
-              <CodeIcon />
-            </IconButton>
-            <Menu
-              id="menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose} >
-              <MenuItem onClick={handleClose} component={Link} to="/">Home</MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="/about">About Me</MenuItem>
-              <MenuItem><span onClick={ScrollToSection}>Projects</span></MenuItem>
-              <MenuItem onClick={handleClose} component={Link} to="/blog">Blog</MenuItem>
-            </Menu>
+            <i className="fas fa-laptop-code fa-2x" style={style}></i>
             <Typography variant="h6">
               Leizl Samano
             </Typography>
+            <section style={{marginLeft: "auto", marginRight: "-12"}}>
+              <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
+                <Tab label="Home" />
+                <Tab label="About" />
+                <Tab label="Projects" />
+                <Tab label="Blog" />
+                <Button variant="outlined" color="secondary" style={{marginLeft:"30px"}}>Contact Me</Button>
+              </Tabs>
+            </section>
           </Toolbar>
+
+
         </AppBar>
       </HideOnScroll>
       <Toolbar id="back-to-top-anchor" />

@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 const Home = () => {
   return (
     <section className="home section">
+      <div className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
       </Typography>
@@ -19,6 +20,7 @@ const Home = () => {
       <Button className="long-button" size="large">
         <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
       </Button>
+      </div>
     </section>
   )
 }
