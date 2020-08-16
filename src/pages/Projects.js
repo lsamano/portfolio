@@ -13,8 +13,8 @@ const Projects = ({ projects }) => {
   }
 
   return (
-    <>
-    <Typography variant="h2" component="h2" gutterBottom>
+    <section id="projects" className="projects section">
+    <Typography variant="h2" component="h2" gutterBottom align="center">
       Projects
     </Typography>
 
@@ -28,7 +28,7 @@ const Projects = ({ projects }) => {
     <Typography variant="body1" gutterBottom>
       As a teacher/coach at Flatiron School, I made a few "mini" projects designed to help students learn the fundamentals of software engineering. Here are just a few!
     </Typography>
-    </>
+  </section>
   );
 }
 

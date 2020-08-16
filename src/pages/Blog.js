@@ -4,11 +4,11 @@ import Typography from '@material-ui/core/Typography';
 
 const Blog = () => {
   return (
-    <div>
-    <Typography variant="h2" component="h2">
+    <section className="blog section">
+    <Typography variant="h2" component="h2" align="center">
     Blogs
     </Typography>
-    </div>
+  </section>
   );
 }
 
