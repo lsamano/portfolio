@@ -33,7 +33,16 @@ code {
 .home {
   padding: 100px 0 0;
   width: 50%;
-  height: 2500px;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 25px 100px 0;
 }
 
 .square-button {

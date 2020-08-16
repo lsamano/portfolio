@@ -15,15 +15,18 @@ import {
 const About = () => {
   const { summary, skills } = about;
   return (
-    <>
-    <img src="/images/avatar.jpg" alt="Leizl Samano" style={{"borderRadius":"50%"}}/>
-    <Typography variant="h2" component="h2">
-    About Me
-    </Typography>
-    <Typography variant="body1">
-      { summary }
-    </Typography>
+    <section className="about section">
+      <Typography variant="h2" component="h2" align="center">
+      About Me
+      </Typography>
 
+    <div className="column">
+      <img src="/images/avatar.jpg" alt="Leizl Samano" style={{borderRadius:"50%", padding:"50px"}}/>
+      <Typography variant="body1">
+        { summary }
+      </Typography>
+    </div>
+    <div className="column">
     <Typography variant="h2" component="h2">
     My Current Skills
     </Typography>
@@ -44,7 +47,8 @@ const About = () => {
       <DiPostgresql size={32}/>
       <DiMongodb size={32}/>
     </div>
-
+    <br/>
+    <br/>
     <Typography variant="h2" component="h2">
     My Experience
     </Typography>
@@ -58,7 +62,8 @@ const About = () => {
     <br/>
     Industry: Education
     </Typography>
-    </>
+    </div>
+  </section>
   );
 }
 
