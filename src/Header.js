@@ -27,13 +27,16 @@ const Header = () => {
     setValue(newValue);
   };
 
-  const ScrollToSection = (event) => {
-    const anchor = (event.target.ownerDocument || document).querySelector('#projects');
+  useEffect(() => {
+    if (value !== 0) {
+      const anchor = document.querySelector(`#projects`);
 
-    if (anchor) {
-      anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+      if (anchor) {
+        anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+      }
+
     }
-  };
+  }, [value])
 
   //// Scroll Watcher
   const element = useRef(null)
@@ -41,7 +44,10 @@ const Header = () => {
   let listener = null
   const [scrollState, setScrollState] = useState("top")
 
+  useEffect(() => element.current.style.backgroundColor = `${theme.palette.secondary.main}25`, [])
+
   useEffect(() => {
+
     listener = document.addEventListener("scroll", e => {
       const currentScroll = window.pageYOffset;
       let color = theme.palette.secondary.main
@@ -72,19 +78,19 @@ const Header = () => {
   return (
     <>
       <HideOnScroll>
-        <AppBar color={scrollState === "top" ? "primary" : "secondary"} ref={element}>
+        <AppBar ref={element}>
           <Toolbar>
             <i className="fas fa-laptop-code fa-2x" style={style}></i>
             <Typography variant="h6">
               Leizl Samano
             </Typography>
             <section style={{marginLeft: "auto", marginRight: "-12", display:"flex"}}>
-              <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
+              <Tabs value={value} indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
                 <Tab label="Home" />
                 <Tab label="About" />
                 <Tab label="Projects" />
                 <Tab label="Blog" />
-                <Button variant="outlined" color="secondary" style={{marginLeft:"30px"}}>Contact Me</Button>
+                <Button variant="outlined" color="primary" style={{marginLeft:"30px"}}>Contact Me</Button>
               </Tabs>
             </section>
           </Toolbar>
@@ -94,7 +100,7 @@ const Header = () => {
       </HideOnScroll>
       <Toolbar id="back-to-top-anchor" />
       <ScrollTop>
-        <Fab color="secondary" size="large" aria-label="scroll back to top">
+        <Fab color="primary" size="large" aria-label="scroll back to top">
           <KeyboardArrowUpIcon />
         </Fab>
       </ScrollTop>
