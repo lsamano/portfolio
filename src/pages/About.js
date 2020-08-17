@@ -27,7 +27,7 @@ const About = () => {
       </Typography>
     </div>
     <div className="column">
-    <Typography variant="h2" component="h2">
+    <Typography variant="h3" component="h3" color="secondary">
     My Current Skills
     </Typography>
     <Typography variant="body1">
@@ -49,7 +49,7 @@ const About = () => {
     </div>
     <br/>
     <br/>
-    <Typography variant="h2" component="h2">
+    <Typography variant="h3" component="h3" color="secondary">
     My Experience
     </Typography>
     <Typography variant="h6" component="h6">
