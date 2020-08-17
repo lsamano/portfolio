@@ -12,7 +12,7 @@ const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   const theme = useTheme();
 
   const style = {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.secondary.contrastText,
     padding: "5px",
     margin: "5px"
