@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,13 +10,12 @@ import ListItem from '@material-ui/core/ListItem';
 import Icon from '@material-ui/core/Icon';
 import { useTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-import { HashLink as Link } from 'react-router-hash-link';
+// import { HashLink as Link } from 'react-router-hash-link';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import HideOnScroll from "./HideOnScroll"
 import ScrollTop from './ScrollTop';
 
 const Header = () => {
-  // const [ anchorEl, setAnchorEl ] = useState(null);
   const [value, setValue] = useState(0);
   const theme = useTheme();
 
@@ -28,14 +27,6 @@ const Header = () => {
     setValue(newValue);
   };
 
-  // const handleClick = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  //
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
-
   const ScrollToSection = (event) => {
     const anchor = (event.target.ownerDocument || document).querySelector('#projects');
 
@@ -44,16 +35,50 @@ const Header = () => {
     }
   };
 
+  //// Scroll Watcher
+  const element = useRef(null)
+  const checkpoint = useRef(300)
+  let listener = null
+  const [scrollState, setScrollState] = useState("top")
+
+  useEffect(() => {
+    listener = document.addEventListener("scroll", e => {
+      const currentScroll = window.pageYOffset;
+      let color = theme.palette.secondary.main
+      if (currentScroll <= checkpoint.current) {
+        color = `${color}25`;
+      } else if (currentScroll < 900) {
+        const valNum = currentScroll * 100 / 900;
+        const decimalValue = Math.round(valNum*255/100);
+        let hexValue;
+        if (valNum < 7) {
+            hexValue = "0"+decimalValue.toString(16).toUpperCase();
+        }
+        else {
+            hexValue = decimalValue.toString(16).toUpperCase();
+        }
+        color = `${color}${hexValue}`;
+      } else {
+        color = `${color}FF`;
+      }
+      element.current.style.backgroundColor = color;
+      return () => {
+        document.removeEventListener("scroll", listener)
+      }
+    }, [scrollState])
+  })
+  ////
+
   return (
     <>
       <HideOnScroll>
-        <AppBar>
+        <AppBar color={scrollState === "top" ? "primary" : "secondary"} ref={element}>
           <Toolbar>
             <i className="fas fa-laptop-code fa-2x" style={style}></i>
             <Typography variant="h6">
               Leizl Samano
             </Typography>
-            <section style={{marginLeft: "auto", marginRight: "-12"}}>
+            <section style={{marginLeft: "auto", marginRight: "-12", display:"flex"}}>
               <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
                 <Tab label="Home" />
                 <Tab label="About" />
