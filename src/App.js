@@ -16,8 +16,8 @@ function App() {
         <Container className="main-div">
           <Home />
           <About />
-          <Projects projects={projects} />
         </Container>
+          <Projects projects={projects} />
       </main>
       <footer>
         <Footer />

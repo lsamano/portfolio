@@ -10,12 +10,24 @@ import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import HideOnScroll from "./HideOnScroll"
 import ScrollTop from './ScrollTop';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Header = () => {
+const useStyles = makeStyles(theme => ({
+  root: {
+    color: theme.palette.primary.light,
+    marginLeft:"30px",
+    marginRight:theme.spacing(10)
+  },
+}));
+
+const Header = props => {
+  const classes = useStyles(props);
+
   const [value, setValue] = useState(0);
   const theme = useTheme();
 
   const style = {
+    marginLeft: theme.spacing(10),
     marginRight: theme.spacing(2)
   }
 
@@ -84,7 +96,7 @@ const Header = () => {
                 <Tab label="About" />
                 <Tab label="Projects" />
                 <Tab label="Blog" />
-                <Button variant="outlined" color="primary" style={{marginLeft:"30px"}}>Contact Me</Button>
+                <Button variant="outlined" color="primary" className={classes.root}>Contact Me</Button>
               </Tabs>
             </section>
           </Toolbar>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 import { about } from '../info.js';
 import {
   DiHtml5,
@@ -15,8 +16,8 @@ import {
 const About = () => {
   const { summary, skills } = about;
   return (
-    <section className="about section">
-      <Typography variant="h2" component="h2" align="center">
+    <Paper component="section" className="about section">
+      <Typography variant="h2" component="h2" align="center" color="secondary">
       About Me
       </Typography>
 
@@ -63,7 +64,7 @@ const About = () => {
     Industry: Education
     </Typography>
     </div>
-  </section>
+  </Paper>
   );
 }
 

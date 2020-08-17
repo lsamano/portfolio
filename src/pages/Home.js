@@ -17,7 +17,7 @@ const Home = props => {
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
       </Typography>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" component="h4" gutterBottom>
         Full Stack Software Engineer.
       </Typography>
       <Typography variant="body1" gutterBottom>
