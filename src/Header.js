@@ -1,16 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import ListItem from '@material-ui/core/ListItem';
-import Icon from '@material-ui/core/Icon';
 import { useTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
-// import { HashLink as Link } from 'react-router-hash-link';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import HideOnScroll from "./HideOnScroll"
 import ScrollTop from './ScrollTop';
@@ -42,12 +38,10 @@ const Header = () => {
   const element = useRef(null)
   const checkpoint = useRef(300)
   let listener = null
-  const [scrollState, setScrollState] = useState("top")
 
-  useEffect(() => element.current.style.backgroundColor = `${theme.palette.secondary.main}25`, [])
+  useEffect(() => element.current.style.backgroundColor = `${theme.palette.secondary.main}25`, [theme])
 
   useEffect(() => {
-
     listener = document.addEventListener("scroll", e => {
       const currentScroll = window.pageYOffset;
       let color = theme.palette.secondary.main
@@ -71,7 +65,7 @@ const Header = () => {
       return () => {
         document.removeEventListener("scroll", listener)
       }
-    }, [scrollState])
+    }, [theme])
   })
   ////
 

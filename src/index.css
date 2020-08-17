@@ -33,12 +33,16 @@ code {
 .home-column {
   padding: 100px 0 0;
   width: 50%;
-  /* height: 100%; */
   height: 600px;
   position: relative;
 }
 
+.projects {
+  background-color: #eeeeee;
+}
+
 .section {
+  padding-top: 30px;
   min-height: 100vh;
 }
 

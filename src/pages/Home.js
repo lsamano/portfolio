@@ -1,10 +1,18 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Home = () => {
+const useStyles = makeStyles({
+  root: {
+    color: 'white'
+  },
+});
+
+const Home = props => {
+  const classes = useStyles(props);
   return (
-    <section className="home section">
+    <section className={`home section ${classes.root}`}>
       <div className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
@@ -17,7 +25,7 @@ const Home = () => {
         <br/> To continue exploring, please scroll down and enjoy.
       </Typography>
       <br/>
-      <Button className="long-button" size="large">
+      <Button className="long-button" color="inherit" size="large">
         <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
       </Button>
       </div>
