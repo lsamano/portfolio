@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     color: theme.palette.primary.light,
     marginLeft:"30px",
-    marginRight:theme.spacing(10)
-  },
+    marginRight: theme.spacing(10),
+  }
 }));
 
 const Header = props => {
@@ -47,14 +47,13 @@ const Header = props => {
   }, [value])
 
   //// Scroll Watcher
-  const element = useRef(null)
+  const appBarEl = useRef(null)
   const checkpoint = useRef(300)
-  let listener = null
-
-  useEffect(() => element.current.style.backgroundColor = `${theme.palette.secondary.main}25`, [theme])
 
   useEffect(() => {
-    listener = document.addEventListener("scroll", e => {
+    appBarEl.current.style.backgroundColor = `${theme.palette.secondary.main}25`
+
+    const listener = document.addEventListener("scroll", event => {
       const currentScroll = window.pageYOffset;
       let color = theme.palette.secondary.main
       if (currentScroll <= checkpoint.current) {
@@ -65,15 +64,14 @@ const Header = props => {
         let hexValue;
         if (valNum < 7) {
             hexValue = "0"+decimalValue.toString(16).toUpperCase();
-        }
-        else {
+        } else {
             hexValue = decimalValue.toString(16).toUpperCase();
         }
         color = `${color}${hexValue}`;
       } else {
         color = `${color}FF`;
       }
-      element.current.style.backgroundColor = color;
+      appBarEl.current.style.backgroundColor = color;
       return () => {
         document.removeEventListener("scroll", listener)
       }
@@ -84,20 +82,22 @@ const Header = props => {
   return (
     <>
       <HideOnScroll>
-        <AppBar ref={element}>
+        <AppBar ref={appBarEl}>
           <Toolbar>
             <i className="fas fa-laptop-code fa-2x" style={style}></i>
             <Typography variant="h6">
               Leizl Samano
             </Typography>
             <section style={{marginLeft: "auto", marginRight: "-12", display:"flex"}}>
-              <Tabs value={value} indicatorColor="primary" onChange={handleChange} aria-label="simple tabs example" variant="fullWidth">
+              <Tabs value={value} indicatorColor="primary"
+                onChange={handleChange}
+                aria-label="simple tabs example" variant="fullWidth">
                 <Tab label="Home" />
                 <Tab label="About" />
                 <Tab label="Projects" />
                 <Tab label="Blog" />
-                <Button variant="outlined" color="primary" className={classes.root}>Contact Me</Button>
               </Tabs>
+              <Button variant="outlined" color="primary" className={classes.root}>Contact Me</Button>
             </section>
           </Toolbar>
 

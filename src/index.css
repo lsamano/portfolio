@@ -43,13 +43,31 @@ code {
 
 .section {
   padding-top: 30px;
-  min-height: 100vh;
+  min-height: 800px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .column {
   float: left;
   width: 50%;
-  padding: 25px 100px 0;
+  padding: 25px 60px 0;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    width: 100%;
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 50px;
 }
 
 .square-button {
@@ -65,6 +83,11 @@ code {
   height: 90px;
   width: 100%;
   margin: 100px;
+}
+
+.dev-icons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .copyright {
