@@ -19,6 +19,8 @@ const Footer = () => (
         <IconButton className="fab fa-medium" fontSize="large"/>
       </a>
     </Tooltip>
+    <br/>
+    <span className="copyright">Copyright © 2020 Leizl Samano. All rights reserved.</span>
   </>
 )
 
