@@ -12,28 +12,35 @@ import {
   DiNodejs,
   DiPostgresql,
   DiMongodb } from 'react-icons/di';
+import ProgressBar from '../ProgressBar';
 
 const About = () => {
   const { summary, skills } = about;
+
   return (
     <Paper component="section" className="about section">
-      <Typography variant="h2" component="h2" align="center" color="secondary">
+      <Typography variant="h2" component="h2" align="center">
       About Me
       </Typography>
-
+      <div className="row">
     <div className="column">
-      <img src="/images/avatar.jpg" alt="Leizl Samano" style={{borderRadius:"50%", padding:"50px"}}/>
+      <img src="/images/avatar.jpg" alt="Leizl Samano" className="avatar"/>
       <Typography variant="body1">
         { summary }
       </Typography>
     </div>
     <div className="column">
-    <Typography variant="h3" component="h3" color="primary">
+    <Typography variant="h3" component="h3">
     My Current Skills
     </Typography>
-    <Typography variant="body1">
-      { skills }
-    </Typography>
+    <ProgressBar completed={90} tech="JavaScript" />
+    <ProgressBar completed={90} tech="React" />
+    <ProgressBar completed={80} tech="HTML5" />
+    <ProgressBar completed={70} tech="CSS3" />
+    <ProgressBar completed={80} tech="Ruby" />
+    <ProgressBar completed={80} tech="Rails" />
+    <ProgressBar completed={70} tech="PostgreSQL" />
+    <ProgressBar completed={50} tech="MongoDB" />
     <div className="dev-icons">
       <DiHtml5 size={32}/>
       <DiCss3 size={32}/>
@@ -50,7 +57,7 @@ const About = () => {
     </div>
     <br/>
     <br/>
-    <Typography variant="h3" component="h3" color="primary">
+    <Typography variant="h3" component="h3">
     My Experience
     </Typography>
     <Typography variant="h6" component="h6">
@@ -64,6 +71,7 @@ const About = () => {
     Industry: Education
     </Typography>
     </div>
+  </div>
   </Paper>
   );
 }
