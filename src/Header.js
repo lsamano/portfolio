@@ -35,26 +35,32 @@ const Header = props => {
     setValue(newValue);
   };
 
+  const [ loaded, setLoaded ] = useState(false);
+
+  useEffect(() => { setLoaded(true) }, [])
+
   useEffect(() => {
-    let anchor;
-    switch (value) {
-      case 0:
+    if (loaded) {
+      let anchor;
+      switch (value) {
+        case 0:
         anchor = document.querySelector("#back-to-top-anchor");
-      break;
-      case 1:
+        break;
+        case 1:
         anchor = document.querySelector("#about");
-      break;
-      case 2:
+        break;
+        case 2:
         anchor = document.querySelector("#projects");
-      break;
-      case 3:
+        break;
+        case 3:
         anchor = document.querySelector("#blog");
-      break;
-      default:
-      break;
-    }
-    if (anchor) {
-      anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+        break;
+        default:
+        break;
+      }
+      if (anchor) {
+        anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+      }
     }
   }, [value])
 
