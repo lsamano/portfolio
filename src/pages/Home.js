@@ -7,6 +7,10 @@ const useStyles = makeStyles({
   root: {
     color: 'white'
   },
+  button: {
+    position: 'absolute',
+    bottom: "0px"
+  }
 });
 
 const Home = props => {
@@ -25,7 +29,7 @@ const Home = props => {
         <br/> To continue exploring, please scroll down and enjoy.
       </Typography>
       <br/>
-      <Button className="long-button" color="inherit" size="large">
+      <Button className={`long-button ${classes.button}`} color="inherit" size="large" variant="outlined">
         <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
       </Button>
       </div>

@@ -9,7 +9,7 @@ const ProgressBar = ({ completed, tech }) => {
     width: '100%',
     backgroundColor: "#e0e0de",
     // borderRadius: 50,
-    // marginTop: 10,
+    marginTop: 10,
     marginBottom: 20,
   }
 
@@ -27,9 +27,18 @@ const ProgressBar = ({ completed, tech }) => {
     fontWeight: 'bold'
   }
 
+  const spanStyles = {
+    marginTop: 10,
+    height: 20,
+    width: "20%",
+    textAlign: "center",
+    color: "white",
+    backgroundColor: theme.palette.primary.main
+  }
+
   return (
     <div style={{display: "flex"}}>
-    <span style={{height: 20, width: "20%", textAlign: "center", color: "white", backgroundColor: theme.palette.primary.main}}>{tech}</span>
+    <span style={spanStyles}>{tech}</span>
     <div style={containerStyles}>
       <div style={fillerStyles}>
       <span style={labelStyles}>{`${completed}%`}</span>
