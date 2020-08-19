@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Container from '@material-ui/core/Container';
 import Header from './Header';
@@ -9,6 +9,10 @@ import { projects } from './info';
 function App() {
   const { Home, About, Projects, Blog } = pages;
   const [ value, setValue ] = useState(0);
+  const homeEl = useRef(null);
+  const aboutEl = useRef(null);
+  const projectsEl = useRef(null);
+  const blogEl = useRef(null);
 
   /////
   const isScrolledIntoView = (el) => {
@@ -22,18 +26,14 @@ function App() {
 
   useEffect(() => {
     const listener = document.addEventListener("scroll", event => {
-      const projects = document.querySelector("#projects");
-      const about = document.querySelector("#about");
-      const home = document.querySelector("#home");
-      const blog = document.querySelector("#blog");
-      if (isScrolledIntoView(projects)) {
-        setValue(2);
-      } else if (isScrolledIntoView(about)) {
-        setValue(1);
-      } else if (isScrolledIntoView(home)) {
-        setValue(0);
-      } else if (isScrolledIntoView(blog)) {
+      if (isScrolledIntoView(blogEl.current)) {
         setValue(3);
+      } else if (isScrolledIntoView(projectsEl.current)) {
+        setValue(2);
+      } else if (isScrolledIntoView(aboutEl.current)) {
+        setValue(1);
+      } else if (isScrolledIntoView(homeEl.current)) {
+        setValue(0);
       }
       return () => {
         document.removeEventListener("scroll", listener)
@@ -46,11 +46,11 @@ function App() {
         <Header setValue={setValue} value={value} />
       <main>
         <Container className="main-div">
-          <Home setValue={setValue} />
-          <About />
+          <Home setValue={setValue} myRef={homeEl} />
+          <About myRef={aboutEl}/>
         </Container>
-          <Projects projects={projects} />
-          <Blog />
+          <Projects projects={projects} myRef={projectsEl} />
+          <Blog myRef={blogEl} />
       </main>
       <footer>
         <Footer />

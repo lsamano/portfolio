@@ -14,11 +14,11 @@ import {
   DiMongodb } from 'react-icons/di';
 import ProgressBar from '../ProgressBar';
 
-const About = () => {
-  const { summary, skills } = about;
+const About = ({ myRef }) => {
+  const { summary } = about;
 
   return (
-    <Paper component="section" className="about section" id="about">
+    <Paper component="section" className="about section" id="about" ref={myRef}>
       <Typography variant="h2" component="h2" align="center">
       About Me
       </Typography>

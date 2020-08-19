@@ -13,10 +13,10 @@ const useStyles = makeStyles({
   }
 });
 
-const Home = props => {
-  const classes = useStyles(props);
+const Home = ({ setValue, myRef }) => {
+  const classes = useStyles();
   return (
-    <section className={`home section ${classes.root}`} id="home">
+    <section className={`home section ${classes.root}`} id="home" ref={myRef}>
       <div className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
@@ -29,7 +29,9 @@ const Home = props => {
         <br/> To continue exploring, please scroll down and enjoy.
       </Typography>
       <br/>
-      <Button className={`long-button ${classes.button}`} color="inherit" size="large" variant="outlined">
+      <Button className={`long-button ${classes.button}`}
+        color="inherit" size="large" variant="outlined"
+        onClick={() => document.querySelector("#about").scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"}) }>
         <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
       </Button>
       </div>
