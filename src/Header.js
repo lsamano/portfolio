@@ -20,10 +20,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Header = props => {
-  const classes = useStyles(props);
-
-  const [value, setValue] = useState(0);
+const Header = ({ value, setValue }) => {
+  const classes = useStyles();
   const theme = useTheme();
 
   const style = {
@@ -32,37 +30,28 @@ const Header = props => {
   }
 
   const handleChange = (event, newValue) => {
+        let anchor;
+        switch (newValue) {
+          case 0:
+          anchor = document.querySelector("#back-to-top-anchor");
+          break;
+          case 1:
+          anchor = document.querySelector("#about");
+          break;
+          case 2:
+          anchor = document.querySelector("#projects");
+          break;
+          case 3:
+          anchor = document.querySelector("#blog");
+          break;
+          default:
+          break;
+        }
+        if (anchor) {
+          anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
+        }
     setValue(newValue);
   };
-
-  const [ loaded, setLoaded ] = useState(false);
-
-  useEffect(() => { setLoaded(true) }, [])
-
-  useEffect(() => {
-    if (loaded) {
-      let anchor;
-      switch (value) {
-        case 0:
-        anchor = document.querySelector("#back-to-top-anchor");
-        break;
-        case 1:
-        anchor = document.querySelector("#about");
-        break;
-        case 2:
-        anchor = document.querySelector("#projects");
-        break;
-        case 3:
-        anchor = document.querySelector("#blog");
-        break;
-        default:
-        break;
-      }
-      if (anchor) {
-        anchor.scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"});
-      }
-    }
-  }, [value])
 
   //// Scroll Watcher
   const appBarEl = useRef(null)
