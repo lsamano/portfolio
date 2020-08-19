@@ -12,7 +12,7 @@ import {
   DiNodejs,
   DiPostgresql,
   DiMongodb } from 'react-icons/di';
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../components/ProgressBar';
 
 const About = ({ myRef }) => {
   const { summary } = about;

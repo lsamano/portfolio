@@ -107,8 +107,6 @@ const Header = ({ value, setValue }) => {
               <Button variant="outlined" color="primary" className={classes.root}>Contact Me</Button>
             </section>
           </Toolbar>
-
-
         </AppBar>
       </HideOnScroll>
       <Toolbar id="back-to-top-anchor" />

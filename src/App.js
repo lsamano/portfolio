@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Container from '@material-ui/core/Container';
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import pages from './pages';
 import { projects } from './info';
 
