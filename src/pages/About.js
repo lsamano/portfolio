@@ -28,6 +28,21 @@ const About = () => {
       <Typography variant="body1">
         { summary }
       </Typography>
+      <br/>
+      <br/>
+      <Typography variant="h3" component="h3">
+      My Experience
+      </Typography>
+      <Typography variant="h6" component="h6">
+      Software Engineering Coach at Flatiron School
+      </Typography>
+      <Typography variant="body1">
+      Worked with students learning programming.
+      <br/>
+      Size: 200+ employees
+      <br/>
+      Industry: Education
+      </Typography>
     </div>
     <div className="column">
     <Typography variant="h3" component="h3">
@@ -55,21 +70,6 @@ const About = () => {
       <DiPostgresql size={32}/>
       <DiMongodb size={32}/>
     </div>
-    <br/>
-    <br/>
-    <Typography variant="h3" component="h3">
-    My Experience
-    </Typography>
-    <Typography variant="h6" component="h6">
-    Software Engineering Coach at Flatiron School
-    </Typography>
-    <Typography variant="body1">
-    Worked with students learning programming.
-    <br/>
-    Size: 200+ employees
-    <br/>
-    Industry: Education
-    </Typography>
     </div>
   </div>
   </Paper>
