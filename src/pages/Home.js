@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 const Home = props => {
   const classes = useStyles(props);
   return (
-    <section className={`home section ${classes.root}`}>
+    <section className={`home section ${classes.root}`} id="home">
       <div className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.

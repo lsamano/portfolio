@@ -18,7 +18,7 @@ const About = () => {
   const { summary, skills } = about;
 
   return (
-    <Paper component="section" className="about section">
+    <Paper component="section" className="about section" id="about">
       <Typography variant="h2" component="h2" align="center">
       About Me
       </Typography>
