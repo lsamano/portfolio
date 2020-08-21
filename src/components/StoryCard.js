@@ -3,19 +3,33 @@ import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-const StoryCard = ({ story }) => {
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: "30%",
+    margin: "10px"
+  },
+  actionContent: {
+    height: "100%"
+  },
+  titleFont: {
+    fontSize: 18
+  }
+}));
+
+const StoryCard = ({ story: { title, subtitle, url } }) => {
+  const { root, actionContent, titleFont } = useStyles();
   return (
-    <Card style={{width: "30%", margin: "10px"}}>
-      <CardActionArea style={{height: "100%"}} href={story.url}>
-        <CardContent style={{height: "100%"}}>
-          <Typography style={{fontSize: 18}}>
-            {story.title}
+    <Card className={root}>
+      <CardActionArea className={actionContent} href={url}>
+        <CardContent className={actionContent}>
+          <Typography className={titleFont}>
+          {title}
           </Typography>
           <Typography color="textSecondary">
-            {story.subtitle}
+          {subtitle}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -24,7 +38,11 @@ const StoryCard = ({ story }) => {
 }
 
 StoryCard.propTypes = {
-  story: PropTypes.object
+  story: PropTypes.shape({
+    title: PropTypes.string,
+    subtitle: PropTypes.string,
+    url: PropTypes.string,
+  })
 };
 
 export default StoryCard;
