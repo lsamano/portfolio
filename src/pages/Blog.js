@@ -2,28 +2,12 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+import StoryCard from '../components/StoryCard';
 import { blog } from '../info';
 
 const Blog = ({ myRef }) => {
   const formatBlogs = () => {
-    return blog.map(story => (
-      <Card style={{width: "30%", margin: "10px"}}>
-        <CardActionArea style={{height: "100%"}}>
-          <CardContent style={{height: "100%"}}>
-            <Typography style={{fontSize: 18}}>
-              {story.title}
-            </Typography>
-            <Typography color="textSecondary">
-              {story.subtitle}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
-    ))
+    return blog.map(story => <StoryCard key={story.id} story={story}/>)
   }
 
   return (
