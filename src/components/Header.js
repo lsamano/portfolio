@@ -45,6 +45,7 @@ const Header = ({ value, setValue }) => {
           anchor = document.querySelector("#blog");
           break;
           default:
+          anchor = document.querySelector("#contact-me");
           break;
         }
         if (anchor) {
@@ -104,7 +105,12 @@ const Header = ({ value, setValue }) => {
                 <Tab label="Projects" />
                 <Tab label="Blog" />
               </Tabs>
-              <Button variant="outlined" color="primary" className={classes.root}>Contact Me</Button>
+              <Button
+                variant="outlined"
+                color="primary"
+                className={classes.root}
+                onClick={(event, val) => handleChange(event, 4)}
+                >Contact Me</Button>
             </section>
           </Toolbar>
         </AppBar>
