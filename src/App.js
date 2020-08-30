@@ -7,12 +7,13 @@ import pages from './pages';
 import { projects } from './info';
 
 function App() {
-  const { Home, About, Projects, Blog } = pages;
+  const { Home, About, Projects, Blog, ContactMe } = pages;
   const [ value, setValue ] = useState(0);
   const homeEl = useRef(null);
   const aboutEl = useRef(null);
   const projectsEl = useRef(null);
   const blogEl = useRef(null);
+  const contactMeEl = useRef(null);
 
   /////
   const isScrolledIntoView = (el) => {
@@ -51,6 +52,7 @@ function App() {
         </Container>
           <Projects projects={projects} myRef={projectsEl} />
           <Blog myRef={blogEl} />
+          <ContactMe myRef={contactMeEl} />
       </main>
       <footer>
         <Footer />
