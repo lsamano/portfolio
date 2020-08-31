@@ -15,19 +15,27 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(theme => ({
   root: {
     color: theme.palette.primary.light,
-    marginLeft:"30px",
-    marginRight: theme.spacing(10),
+    marginLeft: "30px",
+    // marginRight: theme.spacing(10),
+  },
+  text: {
+    whiteSpace: "nowrap"
+  },
+  icon: {
+    // marginLeft: theme.spacing(10),
+    marginRight: theme.spacing(2)
+  },
+  tabs: {
+    width: "auto",
+    marginLeft: "auto",
+    marginRight: "-12",
+    display:"flex"
   }
 }));
 
 const Header = ({ value, setValue }) => {
   const classes = useStyles();
   const theme = useTheme();
-
-  const style = {
-    marginLeft: theme.spacing(10),
-    marginRight: theme.spacing(2)
-  }
 
   const handleChange = (event, newValue) => {
         let anchor;
@@ -92,11 +100,11 @@ const Header = ({ value, setValue }) => {
       <HideOnScroll>
         <AppBar ref={appBarEl}>
           <Toolbar>
-            <i className="fas fa-laptop-code fa-2x" style={style}></i>
-            <Typography variant="h6">
+            <i className={`fas fa-laptop-code fa-2x ${classes.icon}`} ></i>
+            <Typography variant="h6" className={classes.text}>
               Leizl Samano
             </Typography>
-            <section style={{marginLeft: "auto", marginRight: "-12", display:"flex"}}>
+            <section className={classes.tabs}>
               <Tabs value={value} indicatorColor="primary"
                 onChange={handleChange}
                 aria-label="simple tabs example" variant="fullWidth">
@@ -108,7 +116,7 @@ const Header = ({ value, setValue }) => {
               <Button
                 variant="outlined"
                 color="primary"
-                className={classes.root}
+                className={`${classes.root} ${classes.text}`}
                 onClick={(event, val) => handleChange(event, 4)}
                 >Contact Me</Button>
             </section>
