@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -16,8 +17,8 @@ const useStyles = makeStyles({
 const Home = ({ setValue, myRef }) => {
   const classes = useStyles();
   return (
-    <section className={`home section ${classes.root}`} id="home" ref={myRef}>
-      <div className="home-column">
+    <section className={`section ${classes.root}`} id="home" ref={myRef}>
+      <Container className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
       </Typography>
@@ -34,7 +35,7 @@ const Home = ({ setValue, myRef }) => {
         onClick={() => document.querySelector("#about").scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"}) }>
         <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
       </Button>
-      </div>
+    </Container>
     </section>
   )
 }

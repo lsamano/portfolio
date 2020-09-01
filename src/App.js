@@ -44,10 +44,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="splash">
         <Header setValue={setValue} value={value} />
+        <Home setValue={setValue} myRef={homeEl} />
+      </div>
       <main>
         <Container className="main-div">
-          <Home setValue={setValue} myRef={homeEl} />
           <About myRef={aboutEl}/>
         </Container>
           <Projects projects={projects} myRef={projectsEl} />
