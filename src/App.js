@@ -56,9 +56,7 @@ function App() {
           <Blog myRef={blogEl} />
           <ContactMe myRef={contactMeEl} />
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
