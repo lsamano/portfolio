@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { HashRouter as Router } from 'react-router-dom';
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     text: {
       primary: "#424242"
@@ -39,6 +39,8 @@ const theme = createMuiTheme({
     },
   }
 })
+
+theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>

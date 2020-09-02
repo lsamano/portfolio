@@ -7,12 +7,11 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   root: {
     color: 'white',
-    maxWidth: "50%"
   },
   button: {
     position: 'absolute',
     bottom: "0px"
-  }
+  },
 });
 
 const Home = ({ setValue, myRef }) => {
