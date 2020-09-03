@@ -1,10 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Drawer from '@material-ui/core/Drawer';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { useTheme } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
@@ -25,17 +30,22 @@ const useStyles = makeStyles(theme => ({
     // marginLeft: theme.spacing(10),
     marginRight: theme.spacing(2)
   },
-  tabs: {
-    width: "auto",
-    marginLeft: "auto",
-    marginRight: "-12",
-    display:"flex"
+  list: {
+    width: "200px"
   }
 }));
 
 const Header = ({ value, setValue }) => {
   const classes = useStyles();
   const theme = useTheme();
+  const [ drawer, setDrawer ] = useState(false);
+
+  const toggleDrawer = open => event => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawer(open);
+  };
 
   const handleChange = (event, newValue) => {
         let anchor;
@@ -101,10 +111,10 @@ const Header = ({ value, setValue }) => {
         <AppBar ref={appBarEl}>
           <Toolbar>
             <i className={`fas fa-laptop-code fa-2x ${classes.icon}`} ></i>
-            <Typography variant="h6" className={classes.text}>
+            <Typography variant="h6" className={`logo-and-name ${classes.text}`}>
               Leizl Samano
             </Typography>
-            <section className={classes.tabs}>
+            <section className="tabs">
               <Tabs value={value} indicatorColor="primary"
                 onChange={handleChange}
                 aria-label="simple tabs example" variant="fullWidth">
@@ -116,9 +126,31 @@ const Header = ({ value, setValue }) => {
               <Button
                 variant="outlined"
                 color="primary"
-                className={`${classes.root} ${classes.text}`}
-                onClick={(event, val) => handleChange(event, 4)}
+                className={`contact-button ${classes.root} ${classes.text}`}
+                onClick={event => handleChange(event, 4)}
                 >Contact Me</Button>
+            </section>
+            <section className="burger">
+              <i className={`fas fa-bars fa-2x`} onClick={toggleDrawer(true)}></i>
+                <Drawer anchor="right" open={drawer} onClose={toggleDrawer(false)}>
+                  <div
+                    role="presentation"
+                    className={classes.list}
+                    onClick={toggleDrawer(false)}
+                    onKeyDown={toggleDrawer(false)}>
+                  <List component="nav">
+                    {['Home', 'About', 'Projects', 'Blog'].map((text, index) => (
+                      <ListItem button key={text} onClick={event => handleChange(event, index)}>
+                        <ListItemText primary={text} />
+                      </ListItem>
+                    ))}
+                    <Divider/>
+                    <ListItem button onClick={event => handleChange(event, 4)}>
+                      <ListItemText primary="Contact Me" />
+                    </ListItem>
+                  </List>
+                </div>
+              </Drawer>
             </section>
           </Toolbar>
         </AppBar>
