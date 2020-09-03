@@ -85,6 +85,14 @@ code {
   }
 }
 
+.to-top-button {
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  z-index: 999;
+  /* left: calc(50% - 28px); */
+  /* transform: translateX(-50%); */
+}
 
 .home-column {
   /* background-color: black; */

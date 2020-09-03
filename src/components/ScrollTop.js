@@ -2,12 +2,6 @@ import React from 'react';
 import Zoom from '@material-ui/core/Zoom';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 
-const style = {
-  position: `fixed`,
-  bottom: `50px`,
-  right: `100px`,
-  zIndex: `99`,
-}
 const ScrollTop = ({ children }) => {
   const trigger = useScrollTrigger()
 
@@ -21,7 +15,7 @@ const ScrollTop = ({ children }) => {
 
   return (
     <Zoom in={trigger}>
-      <div onClick={handleClick} role="presentation" style={style}>
+      <div onClick={handleClick} role="presentation" className="to-top-button">
         {children}
       </div>
     </Zoom>
