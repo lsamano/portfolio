@@ -6,7 +6,7 @@ import StoryCard from '../components/StoryCard';
 import { blog } from '../info';
 
 const Blog = ({ myRef }) => {
-  const formatBlogs = () => {
+  const formatStories = () => {
     return blog.map(story => <StoryCard key={story.id} story={story}/>)
   }
 
@@ -16,8 +16,8 @@ const Blog = ({ myRef }) => {
         <Typography variant="h2" component="h2" align="center">
           Blogs
         </Typography>
-        <div style={{display: "flex", flexWrap: "wrap", justifyContent: "space-between"}}>
-          { formatBlogs() }
+        <div className="stories-container">
+          { formatStories() }
         </div>
       </Container>
   </section>

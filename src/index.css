@@ -153,6 +153,12 @@ code {
   margin: 100px;
 }
 
+.stories-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
 .dev-icons {
   display: flex;
   justify-content: space-around;
