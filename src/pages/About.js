@@ -24,10 +24,12 @@ const About = ({ myRef }) => {
       </Typography>
       <div className="row">
     <div className="column">
-      <img src="/images/avatar.jpg" alt="Leizl Samano" className="avatar"/>
-      <Typography variant="body1">
-        { summary }
-      </Typography>
+      <div className="about-wrapper">
+        <img src="/images/avatar.jpg" alt="Leizl Samano" className="avatar"/>
+        <Typography variant="body1">
+          { summary }
+        </Typography>
+      </div>
       <br/>
       <br/>
       <Typography variant="h3" component="h3">

@@ -121,7 +121,7 @@ code {
 .column {
   float: left;
   width: 50%;
-  padding: 25px 60px 0;
+  padding: 25px;
 }
 
 @media screen and (max-width: 800px) {
@@ -133,6 +133,11 @@ code {
 .avatar {
   border-radius: 50%;
   padding: 25px;
+  max-width: 100%;
+}
+
+.about-wrapper {
+  text-align: center;
 }
 
 .square-button {
