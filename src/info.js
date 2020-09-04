@@ -47,20 +47,20 @@ export const projects = {
 }
 
 export const blog = [
-  {
-    id: 1,
-    title: "How to Use .each_with_object in Ruby",
-    subtitle: "A quick overview of the method .each_with_object in Ruby.",
-    url: "https://medium.com/@leizl.samano/how-to-use-each-with-object-in-ruby-dccca07bfa18?source=friends_link&sk=d8fee2930423d9a47a594381e8a3b2e3",
-    img_url: "",
-  },
-  {
-    id: 2,
-    title: "Coding Mentality — Be an Athlete and a Detective to Eliminate Every Error",
-    subtitle: "What do athletes and detectives have in common with programmers? It all comes down to mental processes.",
-    url: "https://medium.com/@leizl.samano/coding-mentality-be-an-athlete-and-a-detective-to-eliminate-every-error-ddef88838cf2?source=friends_link&sk=b74614f90c8df8b1f43418c9b0561090",
-    img_url: "",
-  },
+  // {
+  //   id: 1,
+  //   title: "How to Use .each_with_object in Ruby",
+  //   subtitle: "A quick overview of the method .each_with_object in Ruby.",
+  //   url: "https://medium.com/@leizl.samano/how-to-use-each-with-object-in-ruby-dccca07bfa18?source=friends_link&sk=d8fee2930423d9a47a594381e8a3b2e3",
+  //   img_url: "",
+  // },
+  // {
+  //   id: 2,
+  //   title: "Coding Mentality — Be an Athlete and a Detective to Eliminate Every Error",
+  //   subtitle: "What do athletes and detectives have in common with programmers? It all comes down to mental processes.",
+  //   url: "https://medium.com/@leizl.samano/coding-mentality-be-an-athlete-and-a-detective-to-eliminate-every-error-ddef88838cf2?source=friends_link&sk=b74614f90c8df8b1f43418c9b0561090",
+  //   img_url: "",
+  // },
   {
     id: 3,
     title: "How to Make a Weather App Using React",
