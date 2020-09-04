@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles(theme => ({
   span: {
@@ -21,11 +22,19 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center"
+  },
+  card: {
+    maxWidth: "45%",
+    margin: "20px"
+  },
+  mobileCard: {
+    margin: "20px"
   }
 }));
 
 const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
-  const { span, cardMedia, tagContainer } = useStyles();
+  const { span, cardMedia, tagContainer, card, mobileCard } = useStyles();
+  const matches = useMediaQuery('(min-width:850px)');
 
   const renderTags = () => (
     tags.map((tag, index) => (
@@ -38,7 +47,7 @@ const ProjectCard = ({ title, subtitle, img_url, tags, shorthand }) => {
   )
 
   return (
-    <Card style={{width: "45%", margin: "20px"}}>
+    <Card className={matches ? card : mobileCard}>
       <CardActionArea>
         <CardMedia
         component="img"
