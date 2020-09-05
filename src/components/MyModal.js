@@ -65,7 +65,7 @@ const MyModal = ({ handleClickOpen, handleClose, open, title, subtitle, tags, im
         open={open}
         fullWidth={true}
         maxWidth="md">
-        <img src={img_url} style={style}/>
+        <img src={img_url} style={style} alt={`preview of ${title}`}/>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           { title }
         </DialogTitle>
@@ -81,9 +81,8 @@ const MyModal = ({ handleClickOpen, handleClose, open, title, subtitle, tags, im
           <Button autoFocus href={github_url} onClick={handleClose} color="secondary">
             Repo
           </Button>
-          <Button autoFocus href={demo_url} onClick={handleClose} color="primary">
-            Demo
-          </Button>
+          {demo_url &&
+            <Button autoFocus href={demo_url} onClick={handleClose} color="primary">Demo</Button>}
         </DialogActions>
       </Dialog>
     </div>
