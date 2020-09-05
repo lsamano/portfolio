@@ -51,14 +51,20 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 const MyModal = ({ handleClickOpen, handleClose, open, title, subtitle, tags, img_url, github_url, demo_url }) => {
+
   const style = {
-    width: "700px",
-    height: "450px",
+    width: "100%",
+    height: "auto",
   }
 
   return (
     <div>
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+      <Dialog
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={open}
+        fullWidth={true}
+        maxWidth="md">
         <img src={img_url} style={style}/>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           { title }
