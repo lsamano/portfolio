@@ -23,34 +23,29 @@ function App(props) {
     return isVisible;
   }
 
+  const handleSectionScroll = (num, path) => {
+    setValue(num);
+    if (props.history.location.pathname !== path) {
+      props.history.push(path)
+    }
+  }
+
   useEffect(() => {
     const listener = document.addEventListener("scroll", event => {
       if (isScrolledIntoView(blogEl.current) ) {
-        setValue(3);
-        if (props.history.location.pathname !== "/blog") {
-          props.history.push('/blog')
-        }
+        handleSectionScroll(3, '/blog');
       } else if (isScrolledIntoView(projectsEl.current) ) {
-        setValue(2);
-        if (props.history.location.pathname !== "/projects") {
-          props.history.push('/projects')
-        }
+        handleSectionScroll(2, '/projects');
       } else if (isScrolledIntoView(aboutEl.current) ) {
-        setValue(1);
-        if (props.history.location.pathname !== "/about") {
-          props.history.push('/about')
-        }
+        handleSectionScroll(1, '/about');
       } else if (isScrolledIntoView(homeEl.current)) {
-        setValue(0);
-        if (props.history.location.pathname !== "/") {
-          props.history.push('/')
-        }
+        handleSectionScroll(0, '/');
       }
       return () => {
         document.removeEventListener("scroll", listener)
       }
-    }, [])
-  })
+    })
+  }, [])
 
   return (
     <div className="App">
