@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 import pages from './pages';
 import { projects } from './info';
 
-function App() {
+function App(props) {
   const { Home, About, Projects, Blog, ContactMe } = pages;
   const [ value, setValue ] = useState(0);
   const homeEl = useRef(null);
@@ -27,14 +27,26 @@ function App() {
 
   useEffect(() => {
     const listener = document.addEventListener("scroll", event => {
-      if (isScrolledIntoView(blogEl.current)) {
+      if (isScrolledIntoView(blogEl.current) ) {
         setValue(3);
-      } else if (isScrolledIntoView(projectsEl.current)) {
+        if (props.history.location.pathname !== "/blog") {
+          props.history.push('/blog')
+        }
+      } else if (isScrolledIntoView(projectsEl.current) ) {
         setValue(2);
-      } else if (isScrolledIntoView(aboutEl.current)) {
+        if (props.history.location.pathname !== "/projects") {
+          props.history.push('/projects')
+        }
+      } else if (isScrolledIntoView(aboutEl.current) ) {
         setValue(1);
+        if (props.history.location.pathname !== "/about") {
+          props.history.push('/about')
+        }
       } else if (isScrolledIntoView(homeEl.current)) {
         setValue(0);
+        if (props.history.location.pathname !== "/") {
+          props.history.push('/')
+        }
       }
       return () => {
         document.removeEventListener("scroll", listener)
