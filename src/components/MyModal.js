@@ -68,7 +68,7 @@ const MyModal = ({ handleClickOpen, handleClose, open, title, subtitle, tags, im
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           { title }
         </DialogTitle>
-        <DialogContent>
+        <DialogContent style={{overflow: "visible"}}>
           <Typography variant="subtitle1" gutterBottom>
             { subtitle }
           </Typography>
