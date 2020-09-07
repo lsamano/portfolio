@@ -16,36 +16,32 @@ function App(props) {
   const contactMeEl = useRef(null);
 
   const isScrolledIntoView = (el) => {
-    const rect = el.getBoundingClientRect();
-    const elemTop = rect.top;
-    const elemBottom = rect.bottom;
-    const isVisible = elemTop < window.innerHeight/2 && elemBottom >= 0;
-    return isVisible;
-  }
-
-  const handleSectionScroll = (num, path) => {
-    setValue(num);
-    if (props.history.location.pathname !== path) {
-      props.history.push(path)
-    }
+    const visible = el.current.offsetTop < window.scrollY + window.innerHeight/2;
+    return visible;
   }
 
   useEffect(() => {
+    const handleSectionScroll = (num, path) => {
+      setValue(num);
+      if (props.history.location.pathname !== path) {
+        props.history.push(path)
+      }
+    }
     const listener = document.addEventListener("scroll", event => {
-      if (isScrolledIntoView(blogEl.current) ) {
+      if (isScrolledIntoView(blogEl) ) {
         handleSectionScroll(3, '/blog');
-      } else if (isScrolledIntoView(projectsEl.current) ) {
+      } else if (isScrolledIntoView(projectsEl)) {
         handleSectionScroll(2, '/projects');
-      } else if (isScrolledIntoView(aboutEl.current) ) {
+      } else if (isScrolledIntoView(aboutEl)) {
         handleSectionScroll(1, '/about');
-      } else if (isScrolledIntoView(homeEl.current)) {
+      } else if (isScrolledIntoView(homeEl)) {
         handleSectionScroll(0, '/');
       }
       return () => {
         document.removeEventListener("scroll", listener)
       }
     })
-  }, [])
+  }, [props.history])
 
   return (
     <div className="App">
