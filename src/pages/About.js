@@ -50,10 +50,10 @@ const About = ({ myRef }) => {
     <Typography variant="h3" component="h3">
     My Current Skills
     </Typography>
-    <ProgressBar completed={90} tech="JavaScript" />
-    <ProgressBar completed={90} tech="React" />
+    <ProgressBar completed={85} tech="JavaScript" />
+    <ProgressBar completed={85} tech="React" />
     <ProgressBar completed={70} tech="HTML5" />
-    <ProgressBar completed={60} tech="CSS3" />
+    <ProgressBar completed={70} tech="CSS3" />
     <ProgressBar completed={80} tech="Ruby" />
     <ProgressBar completed={80} tech="Rails" />
     <ProgressBar completed={70} tech="PostgreSQL" />
