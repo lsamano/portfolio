@@ -3,21 +3,28 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles({
-  root: {
-    color: 'white',
-  },
   button: {
     position: 'absolute',
-    bottom: "0px"
+    bottom: "30px",
+    left: "0px",
+    height: "90px",
+    width: "100%",
   },
+  mobileButton: {
+    height: "90px",
+    width: "90%",
+  }
 });
 
 const Home = ({ setValue, myRef }) => {
   const classes = useStyles();
+  const matches = useMediaQuery('(max-width:865px)');
+
   return (
-    <section className={`section ${classes.root}`} id="home" ref={myRef}>
+    <section id="home" ref={myRef}>
       <Container className="home-column">
       <Typography variant="h2" component="h2" gutterBottom>
         Hi, I'm Leizl.
@@ -30,10 +37,10 @@ const Home = ({ setValue, myRef }) => {
         <br/> To continue exploring, please scroll down and enjoy.
       </Typography>
       <br/>
-      <Button className={`long-button ${classes.button}`}
+      <Button className={matches ? classes.mobileButton : classes.button}
         color="inherit" size="large" variant="outlined"
         onClick={() => document.querySelector("#about").scrollIntoView({behavior: 'smooth', block: "start", inline: "nearest"}) }>
-        <i className="fas fa-angle-double-down fa-2x"></i><span style={{fontSize:"2em", paddingLeft:"10px"}}>Keep Going...</span>
+        <i className="fas fa-angle-double-down fa-2x"></i>
       </Button>
     </Container>
     </section>
