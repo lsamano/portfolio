@@ -63,8 +63,7 @@ const MyModal = ({ handleClickOpen, handleClose, open, title, subtitle, tags, im
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}
-        fullWidth={true}
-        maxWidth="md">
+        maxWidth="sm">
         <img src={img_url} style={style} alt={`preview of ${title}`}/>
         <DialogTitle id="customized-dialog-title" onClose={handleClose}>
           { title }
