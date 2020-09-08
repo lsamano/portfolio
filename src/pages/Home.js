@@ -8,7 +8,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 const useStyles = makeStyles({
   button: {
     position: 'absolute',
-    bottom: "30px",
+    bottom: "9%",
     left: "0px",
     height: "90px",
     width: "100%",
