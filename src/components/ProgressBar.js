@@ -30,10 +30,10 @@ const ProgressBar = ({ completed, tech }) => {
   const spanStyles = {
     marginTop: 10,
     height: 20,
-    paddingLeft: "8px",
     textAlign: "center",
     color: "white",
-    backgroundColor: theme.palette.primary.light
+    backgroundColor: theme.palette.primary.main,
+    width: "120px"
   }
 
   return (
